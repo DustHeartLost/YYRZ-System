@@ -21,7 +21,7 @@ import java.nio.charset.StandardCharsets;
 public class MyHTTP {
     //此时为局域网IP地址
     public final static String host = "http://192.168.0.103:8762/";
-
+//
     public <T> void get(String url, final String param, final Handler handler,final Class<T> t ) {
         final String getURL = host + url+"?"+param;
         new Thread(new Runnable() {
