@@ -1,0 +1,6 @@
+res/
+Doctor/.gradle
+Doctor/.idea
+Patient/.gradle
+Patient/.idea
+service/.idea
