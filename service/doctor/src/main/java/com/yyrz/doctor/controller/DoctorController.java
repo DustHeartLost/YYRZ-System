@@ -16,8 +16,10 @@ import java.util.*;
 
 @RestController
 public class DoctorController {
-    //private String photoPath="Z:\\MySoftware\\MySQL\\yyrzs_photo\\";
-    private String photoPath="C:\\Users\\GRL\\Desktop\\github\\YYRZ-System-master\\res\\photos\\";
+    //这个路径是张熙业电脑对用的路径
+    private String photoPath="Z:\\MySoftware\\MySQL\\yyrzs_photo\\";
+    //这个电脑是郭容利电脑对应的路径
+    //private String photoPath="C:\\Users\\GRL\\Desktop\\github\\YYRZ-System-master\\res\\photos\\";
     @Autowired
     DoctorPushService doctorPushService;
     @Autowired

@@ -1,7 +1,6 @@
 package com.yyrz.doctor.advice;
 
-import com.yyrz.common.myException.ErrorCode;
-import com.yyrz.common.myException.MyException;
+import com.yyrz.common.myException.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
