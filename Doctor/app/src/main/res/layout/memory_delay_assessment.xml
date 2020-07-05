@@ -1,0 +1,469 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yyrz.doctor.ui.assessmentUI.MemoryAssessment">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/assessment_delay_memory_textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memory_test_label1"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/assessment_delay_memory_guideline4"
+        app:layout_constraintStart_toStartOf="@id/assessment_delay_memory_guideline7" />
+
+    <TextView
+        android:id="@+id/assessment_delay_memory_textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memory_test_label2"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/assessment_delay_memory_guideline3"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_textView1" />
+
+    <TextView
+        android:id="@+id/assessment_delay_memory_textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memory_test_label3"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/assessment_delay_memory_guideline6"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_textView2" />
+
+    <TextView
+        android:id="@+id/assessment_delay_memory_textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memory_test_label4"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/assessment_delay_memory_guideline2"
+        app:layout_constraintEnd_toEndOf="@+id/assessment_delay_memory_textView3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/barrier" />
+
+    <TextView
+        android:id="@+id/assessment_delay_memory_textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memory_test_label5"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/assessment_delay_memory_guideline1"
+        app:layout_constraintEnd_toEndOf="@+id/assessment_delay_memory_textView4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/barrier" />
+
+    <TextView
+        android:id="@+id/assessment_delay_memory_textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memory_test_label10"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/assessment_delay_memory_checkBox1"
+        app:layout_constraintStart_toStartOf="@id/assessment_delay_memory_guideline8"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_guideline5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/assessment_delay_memory_textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memory_test_label8"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/assessment_delay_memory_checkBox6"
+        app:layout_constraintStart_toStartOf="@id/assessment_delay_memory_guideline9"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_guideline5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/assessment_delay_memory_textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memory_test_label9"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/assessment_delay_memory_checkBox11"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_guideline10"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_guideline5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left"
+        app:constraint_referenced_ids="assessment_delay_memory_textView1,assessment_delay_memory_textView2,assessment_delay_memory_textView3,assessment_delay_memory_textView4,assessment_delay_memory_textView5"
+        tools:layout_editor_absoluteX="438dp" />
+
+    <CheckBox
+        android:id="@+id/assessment_delay_memory_checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="0"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_textView1"
+        app:layout_constraintEnd_toEndOf="@+id/assessment_delay_memory_textView6"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_textView6"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_textView1" />
+
+    <CheckBox
+        android:id="@+id/assessment_delay_memory_checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="1"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_textView2"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_checkBox1"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_textView2" />
+
+    <CheckBox
+        android:id="@+id/assessment_delay_memory_checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="2"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_textView3"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_checkBox2"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_textView3" />
+
+    <CheckBox
+        android:id="@+id/assessment_delay_memory_checkBox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="3"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_textView4"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_checkBox3"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_textView4" />
+
+    <CheckBox
+        android:id="@+id/assessment_delay_memory_checkBox5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="4"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_textView5"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_checkBox4"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_textView5" />
+
+    <CheckBox
+        android:id="@+id/assessment_delay_memory_checkBox6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="5"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox1"
+        app:layout_constraintEnd_toEndOf="@+id/assessment_delay_memory_textView7"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_textView7"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_checkBox1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/assessment_delay_memory_checkBox7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="6"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox2"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_checkBox6" />
+
+
+    <CheckBox
+        android:id="@+id/assessment_delay_memory_checkBox8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="7"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox3"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_checkBox7" />
+
+    <CheckBox
+        android:id="@+id/assessment_delay_memory_checkBox9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="8"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox4"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_checkBox8" />
+
+
+    <CheckBox
+        android:id="@+id/assessment_delay_memory_checkBox10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="9"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox5"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_checkBox9" />
+
+
+    <CheckBox
+        android:id="@+id/assessment_delay_memory_checkBox11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="10"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox6"
+        app:layout_constraintEnd_toEndOf="@+id/assessment_delay_memory_textView8"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_textView8"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_checkBox6" />
+
+    <CheckBox
+        android:id="@+id/assessment_delay_memory_checkBox12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="11"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox7"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_checkBox11" />
+
+    <CheckBox
+        android:id="@+id/assessment_delay_memory_checkBox13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="12"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox9"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_checkBox14" />
+
+    <CheckBox
+        android:id="@+id/assessment_delay_memory_checkBox14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="13"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox8"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_checkBox12" />
+
+    <CheckBox
+        android:id="@+id/assessment_delay_memory_checkBox15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="14"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox10"
+        app:layout_constraintStart_toStartOf="@+id/assessment_delay_memory_checkBox13" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/assessment_delay_memory_guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.70"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/assessment_delay_memory_guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.58"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/assessment_delay_memory_guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.34"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/assessment_delay_memory_guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription="0"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.22"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/assessment_delay_memory_guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/assessment_delay_memory_guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.46"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/assessment_delay_memory_guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.11" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/assessment_delay_memory_guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.29"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/assessment_delay_memory_guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.51"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/assessment_delay_memory_guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7323601" />
+
+    <ImageView
+        android:id="@+id/assessment_delay_memory_imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/voice"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_textView6"
+        app:layout_constraintStart_toEndOf="@+id/assessment_delay_memory_textView6"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_guideline5" />
+
+    <ImageView
+        android:id="@+id/assessment_delay_memory_imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:contentDescription="0"
+        android:src="@drawable/voice"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox6"
+        app:layout_constraintStart_toEndOf="@+id/assessment_delay_memory_checkBox6"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_checkBox6" />
+
+    <ImageView
+        android:id="@+id/assessment_delay_memory_imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:contentDescription="1"
+        android:src="@drawable/voice"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox7"
+        app:layout_constraintStart_toEndOf="@+id/assessment_delay_memory_checkBox7"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_checkBox7" />
+
+    <ImageView
+        android:id="@+id/assessment_delay_memory_imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:contentDescription="2"
+        android:src="@drawable/voice"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox8"
+        app:layout_constraintStart_toEndOf="@+id/assessment_delay_memory_checkBox8"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_checkBox8" />
+
+    <ImageView
+        android:id="@+id/assessment_delay_memory_imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:contentDescription="3"
+        android:src="@drawable/voice"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox9"
+        app:layout_constraintStart_toEndOf="@+id/assessment_delay_memory_checkBox9"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_checkBox9" />
+
+    <ImageView
+        android:id="@+id/assessment_delay_memory_imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:contentDescription="4"
+        android:src="@drawable/voice"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox10"
+        app:layout_constraintStart_toEndOf="@+id/assessment_delay_memory_checkBox10"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_checkBox10" />
+
+    <ImageView
+        android:id="@+id/assessment_delay_memory_imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:contentDescription="0"
+        android:src="@drawable/voice"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox11"
+        app:layout_constraintStart_toEndOf="@+id/assessment_delay_memory_checkBox11"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_checkBox11" />
+
+    <ImageView
+        android:id="@+id/assessment_delay_memory_imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:contentDescription="1"
+        android:src="@drawable/voice"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox12"
+        app:layout_constraintStart_toEndOf="@+id/assessment_delay_memory_checkBox12"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_checkBox12"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <ImageView
+        android:id="@+id/assessment_delay_memory_imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:contentDescription="2"
+        android:src="@drawable/voice"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox14"
+        app:layout_constraintStart_toEndOf="@+id/assessment_delay_memory_checkBox14"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_checkBox14" />
+
+    <ImageView
+        android:id="@+id/assessment_delay_memory_imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:contentDescription="3"
+        android:src="@drawable/voice"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox13"
+        app:layout_constraintStart_toEndOf="@+id/assessment_delay_memory_checkBox13"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_checkBox13" />
+
+    <ImageView
+        android:id="@+id/assessment_delay_memory_imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:contentDescription="4"
+        android:src="@drawable/voice"
+        app:layout_constraintBottom_toBottomOf="@+id/assessment_delay_memory_checkBox15"
+        app:layout_constraintStart_toEndOf="@+id/assessment_delay_memory_checkBox15"
+        app:layout_constraintTop_toTopOf="@+id/assessment_delay_memory_checkBox15" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

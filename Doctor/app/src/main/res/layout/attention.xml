@@ -1,0 +1,222 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yyrz.doctor.ui.assessmentUI.Attention">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/attention_guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.83" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/attention_guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/attention_guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <TextView
+        android:id="@+id/attention_textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/attention_label1"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/attention_radioGroup1"
+        app:layout_constraintStart_toStartOf="@+id/attention_radioGroup1"
+        app:layout_constraintTop_toBottomOf="@+id/attention_guideline3" />
+
+    <RadioGroup
+        android:id="@+id/attention_radioGroup1"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/attention_radioButton1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/attention_textView2"
+        app:layout_constraintStart_toStartOf="@+id/attention_textView2"
+        app:layout_constraintTop_toBottomOf="@+id/attention_textView1">
+
+        <RadioButton
+            android:id="@+id/attention_radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_0" />
+
+        <RadioButton
+            android:id="@+id/attention_radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_1" />
+
+        <RadioButton
+            android:id="@+id/attention_radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_2" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/attention_textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/attention_label2"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/attention_radioGroup2"
+        app:layout_constraintStart_toStartOf="@+id/attention_radioGroup2"
+        app:layout_constraintTop_toBottomOf="@+id/attention_radioGroup1" />
+
+    <RadioGroup
+        android:id="@+id/attention_radioGroup2"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/attention_radioButton4"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/attention_textView3"
+        app:layout_constraintStart_toStartOf="@+id/attention_textView3"
+        app:layout_constraintTop_toBottomOf="@+id/attention_textView2">
+
+        <RadioButton
+            android:id="@+id/attention_radioButton4"
+            android:layout_width="113dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/grade_0" />
+
+        <RadioButton
+            android:id="@+id/attention_radioButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="21"
+            android:text="@string/grade_1" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/attention_textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/attention_label3"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/attention_radioGroup3"
+        app:layout_constraintStart_toStartOf="@+id/attention_radioGroup3"
+        app:layout_constraintTop_toBottomOf="@+id/attention_radioGroup2" />
+
+    <RadioGroup
+        android:id="@+id/attention_radioGroup3"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/attention_radioButton6"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/attention_guideline1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/attention_guideline4"
+        app:layout_constraintStart_toStartOf="@+id/attention_guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/attention_textView3">
+
+        <RadioButton
+            android:id="@+id/attention_radioButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_0" />
+
+        <RadioButton
+            android:id="@+id/attention_radioButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_1" />
+
+        <RadioButton
+            android:id="@+id/attention_radioButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_2" />
+
+        <RadioButton
+            android:id="@+id/attention_radioButton9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_3" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/attention_imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/voice"
+        app:layout_constraintBottom_toBottomOf="@+id/attention_textView1"
+        app:layout_constraintStart_toEndOf="@+id/attention_textView1"
+        app:layout_constraintTop_toTopOf="@+id/attention_textView1" />
+
+    <ImageView
+        android:id="@+id/attention_imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/voice"
+        app:layout_constraintBottom_toBottomOf="@+id/attention_textView4"
+        app:layout_constraintStart_toEndOf="@+id/attention_textView4"
+        app:layout_constraintTop_toTopOf="@+id/attention_textView4" />
+
+    <ImageView
+        android:id="@+id/attention_imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/voice"
+        app:layout_constraintBottom_toBottomOf="@+id/attention_textView2"
+        app:layout_constraintStart_toEndOf="@+id/attention_textView2"
+        app:layout_constraintTop_toTopOf="@+id/attention_textView2" />
+
+    <ImageView
+        android:id="@+id/attention_imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/voice"
+        app:layout_constraintBottom_toBottomOf="@+id/attention_textView3"
+        app:layout_constraintStart_toEndOf="@+id/attention_textView3"
+        app:layout_constraintTop_toTopOf="@+id/attention_textView3" />
+
+    <TextView
+        android:id="@+id/attention_textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/attention_label4"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/attention_textView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@+id/attention_imageView1"
+        app:layout_constraintTop_toTopOf="@+id/attention_textView1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

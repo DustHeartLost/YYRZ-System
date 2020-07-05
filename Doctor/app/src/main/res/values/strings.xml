@@ -1,0 +1,146 @@
+<resources>
+    <string name="app_name">Doctor</string>
+    <string name="nav_header_title">Dust_Heart_Lost</string>
+    <string name="nav_header_subtitle">1132143964@qq.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="grade_hints">请为其打分</string>
+    <string name="grade_0">0分</string>
+    <string name="grade_1">1分</string>
+    <string name="grade_2">2分</string>
+    <string name="grade_3">3分</string>
+
+    <string name="menu_home">主页</string>
+    <string name="menu_gallery">个人信息</string>
+    <string name="menu_slideshow">我的患者</string>
+    <string name="statistics">数据统计</string>
+    <string name="recordHistory">评估记录</string>
+    <string name="menu_tools">我的消息</string>
+    <string name="menu_share">设置</string>
+    <string name="menu_send">退出</string>
+    <string-array name="assessment">
+        <item>交替连线</item>
+        <item>视空间与执行技能</item>
+        <item>命名</item>
+        <item>记忆</item>
+        <item>注意</item>
+        <item>语言</item>
+        <item>抽象</item>
+        <item>延迟回忆</item>
+        <item>定向</item>
+    </string-array>
+    <string name="finish_assessment">评估完成</string>
+    <string name="assessment_pie_chart">评估记录统计</string>
+    <string name="bind">绑定患者</string>
+    <string name="home_button1">评估</string>
+    <string name="home_button2">训练</string>
+
+    <string name="crash">网络出错啦</string>
+    <string name="again">重试</string>
+    <string name="commit">提交</string>
+    <string name="loading">加载中…</string>
+
+    <string-array name="patient_information">
+        <item>姓名</item>
+        <item>性别</item>
+        <item>年龄</item>
+        <item>科室</item>
+        <item>病床号</item>
+    </string-array>
+
+    <string name="alternate_line_test_label1">拍照记录</string>
+
+    <string name="visual_space_skill_label1">立方体</string>
+    <string name="visual_space_skill_label2">钟表</string>
+    <string name="visual_space_skill_label3">轮廓</string>
+    <string name="visual_space_skill_label4">数字</string>
+    <string name="visual_space_skill_label5">指针</string>
+
+    <string name="memory_test_label1">面孔</string>
+    <string name="memory_test_label2">天鹅绒</string>
+    <string name="memory_test_label3">教堂</string>
+    <string name="memory_test_label4">菊花</string>
+    <string name="memory_test_label5">红色</string>
+    <string name="memory_test_label6">第一次</string>
+    <string name="memory_test_label7">第二次</string>
+    <string name="memory_test_label8">分类提示</string>
+    <string name="memory_test_label9">多选提示</string>
+    <string name="memory_test_label10">得分项</string>
+
+    <string name="assessment_finish_label1">正在上传，请稍后.....</string>
+    <string name="assessment_finish_label2">上传成功！！！</string>
+    <string name="assessment_finish_label3">网络状况不佳，请重试</string>
+    <string name="assessment_finish_label4">网络状况不佳，请返回，稍后为您自动上传</string>
+
+    <string name="named_label1">狮子</string>
+    <string name="named_label2">犀牛</string>
+    <string name="named_label3">骆驼</string>
+
+    <string name="fluent_language_label1">重复</string>
+    <string name="fluent_language_label2">流畅性</string>
+    <string name="fluent_language_label3">语句1</string>
+    <string name="fluent_language_label4">语句2</string>
+    <string name="fluent_language_label5">请记录患者说的话</string>
+
+    <string name="attention_label1">顺背</string>
+    <string name="attention_label2">遇到1拍打桌面</string>
+    <string name="attention_label3">100连续减7</string>
+    <string name="attention_label4">倒背</string>
+
+    <string name="abstraction_label1">火车-自行车</string>
+    <string name="abstraction_label2">手表-尺子</string>
+    <string name="abstraction_label3">小练习</string>
+    <string name="abstraction_label4">换种说法</string>
+    <string name="abstraction_label5">正确答案</string>
+
+
+    <string name="directional_label1">日期</string>
+    <string name="directional_label2">月份</string>
+    <string name="directional_label3">年代</string>
+    <string name="directional_label4">星期几</string>
+    <string name="directional_label5">地点</string>
+    <string name="directional_label6">城市</string>
+
+    <string-array name="training">
+        <item>记忆力训练</item>
+        <item>记忆力训练</item>
+        <item>记忆力训练</item>
+        <item>记忆力训练</item>
+        <item>记忆力训练</item>
+        <item>记忆力训练</item>
+        <item>记忆力训练</item>
+        <item>记忆力训练</item>
+
+        <item>记忆力训练</item>
+        <item>记忆力训练</item>
+        <item>记忆力训练</item>
+        <item>记忆力训练</item>
+        <item>记忆力训练</item>
+        <item>记忆力训练</item>
+        <item>记忆力训练</item>
+        <item>记忆力训练</item>
+    </string-array>
+
+    <string-array name="memoryTraining1">
+        <item>瞬时记忆</item>
+        <item>二位数字</item>
+        <item>三位数字</item>
+        <item>四位数字</item>
+    </string-array>
+    <string-array name="memoryTraining2">
+        <item>短时记忆训练</item>
+        <item>人物类图片</item>
+        <item>日常用品类</item>
+        <item>风景类</item>
+        <item>动物类</item>
+    </string-array>
+    <string-array name="memoryTraining3">
+        <item>长时记忆训练</item>
+        <item>亲人图像记忆</item>
+        <item>往事回忆</item>
+    </string-array>
+
+    <string name="binding">绑定患者</string>
+    <string name="noBinding">解除绑定</string>
+
+</resources>

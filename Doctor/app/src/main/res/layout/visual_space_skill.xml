@@ -1,0 +1,144 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.yyrz.doctor.ui.assessmentUI.VisualSpaceSkill">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/visualSpaceSkill_textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/visual_space_skill_label1"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/visualSpaceSkill_radioGroup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/visualSpaceSkill_guideline3" />
+
+        <RadioGroup
+            android:id="@+id/visualSpaceSkill_radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/visualSpaceSkill_textView2"
+            app:layout_constraintStart_toStartOf="@+id/visualSpaceSkill_textView1"
+            app:layout_constraintTop_toBottomOf="@+id/visualSpaceSkill_textView1">
+
+            <RadioButton
+                android:id="@+id/visualSpaceSkill_radioButton1"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:checked="true"
+                android:contentDescription="0"
+                android:text="@string/grade_0" />
+
+            <Space
+                android:layout_width="136dp"
+                android:layout_height="40dp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/visualSpaceSkill_radioButton2"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:contentDescription="1"
+                android:text="@string/grade_1" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/visualSpaceSkill_textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/visual_space_skill_label2"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/visualSpaceSkill_checkBox1"
+            app:layout_constraintStart_toStartOf="@+id/visualSpaceSkill_radioGroup"
+            app:layout_constraintTop_toBottomOf="@+id/visualSpaceSkill_radioGroup" />
+
+        <CheckBox
+            android:id="@+id/visualSpaceSkill_checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="1"
+            android:text="@string/visual_space_skill_label3"
+            app:layout_constraintBottom_toTopOf="@+id/visualSpaceSkill_guiduline2"
+            app:layout_constraintStart_toStartOf="@+id/visualSpaceSkill_textView2"
+            app:layout_constraintTop_toBottomOf="@+id/visualSpaceSkill_textView2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/visualSpaceSkill_guiduline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.80" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/visualSpaceSkill_guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.00" />
+
+        <CheckBox
+            android:id="@+id/visualSpaceSkill_checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="2"
+            android:text="@string/visual_space_skill_label4"
+            app:layout_constraintBottom_toBottomOf="@+id/visualSpaceSkill_checkBox1"
+            app:layout_constraintEnd_toStartOf="@+id/visualSpaceSkill_checkBox3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/visualSpaceSkill_checkBox1"
+            app:layout_constraintTop_toTopOf="@+id/visualSpaceSkill_checkBox1" />
+
+        <CheckBox
+            android:id="@+id/visualSpaceSkill_checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="3"
+            android:text="@string/visual_space_skill_label5"
+            app:layout_constraintBottom_toBottomOf="@+id/visualSpaceSkill_checkBox2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/visualSpaceSkill_checkBox2"
+            app:layout_constraintTop_toTopOf="@+id/visualSpaceSkill_checkBox2" />
+
+        <ImageView
+            android:id="@+id/visualSpaceSkill_imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:src="@drawable/voice"
+            app:layout_constraintBottom_toBottomOf="@+id/visualSpaceSkill_textView1"
+            app:layout_constraintStart_toEndOf="@+id/visualSpaceSkill_textView1"
+            app:layout_constraintTop_toTopOf="@+id/visualSpaceSkill_textView1" />
+
+        <ImageView
+            android:id="@+id/visualSpaceSkill_imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:src="@drawable/voice"
+            app:layout_constraintBottom_toBottomOf="@+id/visualSpaceSkill_textView2"
+            app:layout_constraintStart_toEndOf="@+id/visualSpaceSkill_textView2"
+            app:layout_constraintTop_toTopOf="@+id/visualSpaceSkill_textView2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

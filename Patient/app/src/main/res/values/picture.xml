@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="scenery">
+        <item>@drawable/beach</item>
+        <item>@drawable/desert</item>
+        <item>@drawable/forest</item>
+        <item>@drawable/grassland</item>
+        <item>@drawable/lakes</item>
+        <item>@drawable/mountain</item>
+        <item>@drawable/waterfall</item>
+    </string-array>
+    
+    <string-array name="life">
+        <item>@drawable/chopper</item>
+        <item>@drawable/clock</item>
+        <item>@drawable/comb</item>
+        <item>@drawable/globe</item>
+        <item>@drawable/hanger</item>
+        <item>@drawable/slippers</item>
+        <item>@drawable/trash</item>
+        <item>@drawable/umbrella</item>
+    </string-array>
+    
+    <string-array name="animal">
+        <item>@drawable/bat</item>
+        <item>@drawable/bird</item>
+        <item>@drawable/butterfly</item>
+        <item>@drawable/camel1</item>
+        <item>@drawable/cat</item>
+        <item>@drawable/chicken</item>
+        <item>@drawable/deer</item>
+        <item>@drawable/duck</item>
+        <item>@drawable/giraffe</item>
+        <item>@drawable/hippocampus</item>
+        <item>@drawable/horse</item>
+        <item>@drawable/orangutan</item>
+        <item>@drawable/ostrich</item>
+        <item>@drawable/panda</item>
+        <item>@drawable/peacock</item>
+        <item>@drawable/penguins</item>
+        <item>@drawable/rabbit</item>
+        <item>@drawable/shark</item>
+        <item>@drawable/swan</item>
+        <item>@drawable/tiger</item>
+        <item>@drawable/zebra</item>
+    </string-array>
+</resources>

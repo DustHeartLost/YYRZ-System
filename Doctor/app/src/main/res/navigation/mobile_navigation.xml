@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.yyrz.doctor.ui.mainUI.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/home" >
+        <action
+            android:id="@+id/action_nav_home_to_patientList"
+            app:destination="@+id/patientList"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_information"
+            app:destination="@id/nav_information"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_message"
+            app:destination="@id/nav_message"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_setting"
+            app:destination="@id/nav_setting"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_logout"
+            app:destination="@id/nav_logout"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_home_to_login"
+            app:destination="@id/login"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_information"
+        android:name="com.yyrz.doctor.ui.mainUI.information.InformationFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/information" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_patient"
+        android:name="com.yyrz.doctor.ui.mainUI.patient.PatientFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/patient" >
+        <action
+            android:id="@+id/action_nav_patient_to_addPatient"
+            app:destination="@id/addPatient"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+        <action
+            android:id="@+id/action_nav_patient_to_historyRecordView"
+            app:destination="@id/historyRecordView"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_in"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+        <action
+            android:id="@+id/action_nav_patient_to_pieChartView"
+            app:destination="@id/pieChartView"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_message"
+        android:name="com.yyrz.doctor.ui.mainUI.message.MessageFragment"
+        android:label="@string/menu_tools"
+        tools:layout="@layout/message" />
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.yyrz.doctor.ui.mainUI.setting.SettingFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/setting" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.yyrz.doctor.ui.mainUI.logout.LogoutFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/logout" />
+
+    <fragment
+        android:id="@+id/patientList"
+        android:name="com.yyrz.doctor.ui.commonUi.patientlist.PatientList"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/patient_list" >
+        <action
+            android:id="@+id/action_patientList_to_training_home_page"
+            app:destination="@id/training_home_page"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out"
+            app:popUpTo="@+id/nav_home" />
+        <action
+            android:id="@+id/action_patientList_to_showViewPager"
+            app:destination="@id/showViewPager"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out"
+            app:popUpTo="@+id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishProcess"
+        android:name="com.yyrz.doctor.ui.assessmentUI.FinishProcess"
+        android:label="@string/finish_assessment"
+        tools:layout="@layout/finish_process" />
+    <fragment
+        android:id="@+id/training_home_page"
+        android:name="com.yyrz.doctor.ui.trainningUI.Training_home_page"
+        android:label="训练"
+        tools:layout="@layout/training_home_page" />
+    <fragment
+        android:id="@+id/image"
+        android:name="com.yyrz.doctor.ui.commonUi.showimage.Image"
+        tools:layout="@layout/image_layout" />
+    <fragment
+        android:id="@+id/showViewPager"
+        android:name="com.yyrz.doctor.ui.assessmentUI.ShowViewPager"
+        tools:layout="@layout/show_view_pager" >
+        <action
+            android:id="@+id/action_showViewPager_to_finishProcess"
+            app:destination="@id/finishProcess"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/slide_right_in"
+            app:popExitAnim="@anim/slide_left_out"
+            app:popUpTo="@+id/nav_home" />
+        <action
+            android:id="@+id/action_showViewPager_to_image"
+            app:destination="@id/image"
+            app:enterAnim="@anim/image_in"
+            app:exitAnim="@anim/image_out"
+            app:popEnterAnim="@anim/image_in"
+            app:popExitAnim="@anim/image_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPatient"
+        android:name="com.yyrz.doctor.ui.mainUI.patient.addPatient.AddPatient"
+        android:label="@string/bind"
+        tools:layout="@layout/add_patient" />
+    <fragment
+        android:id="@+id/historyRecordView"
+        android:name="com.yyrz.doctor.ui.mainUI.patient.historyRecord.HistoryRecordView"
+        android:label="@string/recordHistory"
+        tools:layout="@layout/history_record_view" >
+        <action
+            android:id="@+id/action_historyRecordView_to_image"
+            app:destination="@id/image"
+            app:enterAnim="@anim/image_in"
+            app:popExitAnim="@anim/image_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/pieChartView"
+        android:name="com.yyrz.doctor.ui.mainUI.patient.pieChart.PieChartView"
+        android:label="@string/statistics"
+        tools:layout="@layout/pie_chart_view" />
+    <fragment
+        android:id="@+id/login"
+        android:name="com.yyrz.doctor.ui.loginAndEnroll.Login"
+        android:label="login"
+        tools:layout="@layout/login" />
+
+</navigation>

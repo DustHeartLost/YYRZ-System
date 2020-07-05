@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mynavigation"
+    app:startDestination="@id/mainUI">
+
+    <fragment
+        android:id="@+id/mainUI"
+        android:name="com.yyrz.patient.UI.mainUI.MainUI"
+        android:label="main_ui"
+        tools:layout="@layout/main_ui" >
+        <action
+            android:id="@+id/action_mainUI_to_alterLineTest"
+            app:destination="@id/alterLineTest"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out" />
+        <action
+            android:id="@+id/action_mainUI_to_instantMemory"
+            app:destination="@id/instantMemory" />
+        <action
+            android:id="@+id/action_mainUI_to_shortTerm"
+            app:destination="@id/shortTerm" />
+        <action
+            android:id="@+id/action_mainUI_to_longTerm"
+            app:destination="@id/longTerm" />
+        <action
+            android:id="@+id/action_mainUI_to_login"
+            app:destination="@id/login"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/abstraction"
+        android:name="com.yyrz.patient.UI.assessmentUI.Abstraction"
+        android:label="abstraction"
+        tools:layout="@layout/abstraction" >
+        <action
+            android:id="@+id/action_abstraction_to_memoryDelayTest"
+            app:destination="@id/memoryDelayTest"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/alterLineTest"
+        android:name="com.yyrz.patient.UI.assessmentUI.AlterLineTest"
+        android:label="alter_line_test"
+        tools:layout="@layout/alter_line_test" >
+        <action
+            android:id="@+id/action_alterLineTest_to_visualTest"
+            app:destination="@id/visualTest"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/attention"
+        android:name="com.yyrz.patient.UI.assessmentUI.Attention"
+        android:label="attention"
+        tools:layout="@layout/attention" >
+        <action
+            android:id="@+id/action_attention_to_fluentLanguage"
+            app:destination="@id/fluentLanguage"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/direction"
+        android:name="com.yyrz.patient.UI.assessmentUI.Direction"
+        android:label="direction"
+        tools:layout="@layout/direction" />
+    <fragment
+        android:id="@+id/fluentLanguage"
+        android:name="com.yyrz.patient.UI.assessmentUI.FluentLanguage"
+        android:label="fluent_language"
+        tools:layout="@layout/fluent_language" >
+        <action
+            android:id="@+id/action_fluentLanguage_to_abstraction"
+            app:destination="@id/abstraction"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/memoryAssessment"
+        android:name="com.yyrz.patient.UI.assessmentUI.MemoryAssessment"
+        android:label="memory_assessment"
+        tools:layout="@layout/memory_assessment" >
+        <action
+            android:id="@+id/action_memoryAssessment_to_attention"
+            app:destination="@id/attention"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/memoryDelayTest"
+        android:name="com.yyrz.patient.UI.assessmentUI.MemoryDelayTest"
+        android:label="memory_delay_test"
+        tools:layout="@layout/memory_delay_test" >
+        <action
+            android:id="@+id/action_memoryDelayTest_to_direction"
+            app:destination="@id/direction"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/named"
+        android:name="com.yyrz.patient.UI.assessmentUI.Named"
+        android:label="named"
+        tools:layout="@layout/named" >
+        <action
+            android:id="@+id/action_named_to_memoryAssessment"
+            app:destination="@id/memoryAssessment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/visualTest"
+        android:name="com.yyrz.patient.UI.assessmentUI.VisualTest"
+        android:label="visual_test"
+        tools:layout="@layout/visual_test" >
+        <action
+            android:id="@+id/action_visualTest_to_named"
+            app:destination="@id/named"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/instantMemory"
+        android:name="com.yyrz.patient.UI.trainingUI.memoryTraining.InstantMemory"
+        android:label="instant_memory"
+        tools:layout="@layout/instant_memory" />
+    <fragment
+        android:id="@+id/shortTerm"
+        android:name="com.yyrz.patient.UI.trainingUI.memoryTraining.ShortTerm"
+        android:label="short_term"
+        tools:layout="@layout/short_term" />
+    <fragment
+        android:id="@+id/longTerm"
+        android:name="com.yyrz.patient.UI.trainingUI.memoryTraining.LongTerm"
+        android:label="long_term"
+        tools:layout="@layout/long_term" />
+    <fragment
+        android:id="@+id/login"
+        android:name="com.yyrz.patient.UI.loginAndEnroll.Login"
+        android:label="login"
+        tools:layout="@layout/login" />
+</navigation>

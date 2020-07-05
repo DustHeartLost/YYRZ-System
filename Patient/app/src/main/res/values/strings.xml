@@ -1,0 +1,118 @@
+<resources>
+    <string name="app_name">Patient</string>
+
+    <string name="alterLineTest_tips1">我们有时会用1、2、3或者汉语的甲、乙、丙来表示顺序。请您按照从数字到汉字并逐渐升高的顺序画一条连线，例如，从１连向甲，再连向２，在连向乙，一直到结束。</string>
+    <string name="visualSpace_tips1">请您照着这幅图在纸上空白处再画一遍，并尽可能精确。</string>
+    <string name="visualSpace_tips2">请您在纸上画一个钟表，填上所有的数字并指示出11点10分。</string>
+    <string name="named_tips">请您告诉我，这个动物的名字</string>
+    <string name="memory">这是一个记忆力测验。在下面的时间里我会给您读几个词，您要注意听，一定要记住。当我读完后，把您记住的词告诉我。回答时想到哪个就说哪个，不必按照我读的顺序</string>
+    <string name="memory_tips1">面孔</string>
+    <string name="memory_tips2">天鹅绒</string>
+    <string name="memory_tips3">教堂</string>
+    <string name="memory_tips4">菊花</string>
+    <string name="memory_tips5">红色</string>
+    <string name="memory_tips6">我把这些词再读一遍，努力去记并把您记住的词告诉我，包括您在第一次已经说过的词，几分钟后我们会让你再回忆一次</string>
+    <string name="memory_tips7">在过几分钟，我会让您把这些词再回忆一次</string>
+    <string name="memory_tips8">请重复刚才说过的词语</string>
+    <string name="attention_tips1">下面我说一些数字，您仔细听，当我说完时您就跟着照样背出来</string>
+    <string name="attention_tips2">21854</string>
+    <string name="attention_tips3">请按照顺序背出数字</string>
+    <string name="attention_tips4">下面我再说一些数字，您仔细听，当我说完时您必须按照原数倒着背出来</string>
+    <string name="attention_tips5">742</string>
+    <string name="attention_tips6">请按照逆序背出数字</string>
+    <string name="attention_tips7">接下来我朗读一组数字，每当我读到1时请拍手。其他的数字不要拍</string>
+    <string name="attention_tips8">52139411806215194511141905112</string>
+    <string name="attention_tips9">现在请您做一道计算题，连续减7</string>
+    <string name="attention_tips10">93  86  79  72  65</string>
+    <string name="fluentLanguage_tips1">现在我要对您说一句话，我说完后请您把我说的话尽可能原原本本的重复出来</string>
+    <string name="fluentLanguage_tips2">我只知道今天张亮是来帮过忙的人</string>
+    <string name="fluentLanguage_tips3">现在我再说另一句话，我说完后请您也把它尽可能原原本本的重复出来</string>
+    <string name="fluentLanguage_tips4">狗在房间的时候，猫总是躲在沙发下面</string>
+    <string name="fluentLanguage_tips5">请您尽量多地说出以 ‘发’ 字开头的词语或俗语，如 ‘发财’ 。时间是1分钟，您说的越多越好，越快越好，尽量不要重复。</string>
+    <string name="fluentLanguage_tips6">请重复刚才的话</string>
+    <string name="abstraction_tips1">下面做个小练习，请您说说桔子和香蕉在什么方面相类似？</string>
+    <string name="abstraction_tips2">请再换一种说法，他们在什么方面相类似？</string>
+    <string name="abstraction_tips3">您说的没错，也可以说他们都是水果。</string>
+    <string name="abstraction_tips4">您再说说火车和自行车在什么方面相类似？</string>
+    <string name="abstraction_tips5">您再说说手表和尺子在什么方面相类似？</string>
+    <string name="memory_delay">刚才我给您读了几个词让您记住，请您再尽量回忆一下，告诉我这些词都有什么？</string>
+    <string name="memory_delay_tips1">身体的一部分</string>
+    <string name="memory_delay_tips2">一种纺织品</string>
+    <string name="memory_delay_tips3">一座建筑</string>
+    <string name="memory_delay_tips4">一种花</string>
+    <string name="memory_delay_tips5">一种颜色</string>
+    <string name="memory_delay_tips6">鼻子、面孔、手掌</string>
+    <string name="memory_delay_tips7">棉布、的确良、天鹅绒</string>
+    <string name="memory_delay_tips8">教堂、学校、医院</string>
+    <string name="memory_delay_tips9">玫瑰、菊花、牡丹</string>
+    <string name="memory_delay_tips10">红色、蓝色、绿色</string>
+    <string name="direction_tips1">告诉我今天是什么日期</string>
+    <string name="direction_tips2">告诉我现在是，哪年，哪月，今天确切日期，星期几</string>
+    <string name="direction_tips3">告诉我这是什么地方，它在哪个城市？</string>
+
+    <string name="training_instant_memory1">现在我朗读一组数字，我读完后请您重复我读过的数字</string>
+    <string name="training_instant_memory2">请重复刚才的数字</string>
+
+    <string name="training_short_memory1">现在我将要展示一组图片，展示完毕后请说出图片的内容</string>
+    <string name="training_short_memory2">请重复图片的内容</string>
+
+    <string-array name="scenery_tips">
+        <item>沙滩</item>
+        <item>沙漠</item>
+        <item>森林</item>
+        <item>草原</item>
+        <item>湖泊</item>
+        <item>山脉</item>
+        <item>瀑布</item>
+    </string-array>
+    <string-array name="life_tips">
+        <item>菜刀</item>
+        <item>闹钟</item>
+        <item>梳子</item>
+        <item>地球仪</item>
+        <item>衣架</item>
+        <item>拖鞋</item>
+        <item>垃圾箱</item>
+        <item>雨伞</item>
+    </string-array>
+    <string-array name="animal_tips">
+        <item>蝙蝠</item>
+        <item>鸟</item>
+        <item>蝴蝶</item>
+        <item>骆驼</item>
+        <item>猫</item>
+        <item>鸡</item>
+        <item>梅花鹿</item>
+        <item>鸭子</item>
+        <item>长颈鹿</item>
+        <item>海马</item>
+        <item>马</item>
+        <item>猩猩</item>
+        <item>鸵鸟</item>
+        <item>熊猫</item>
+        <item>孔雀</item>
+        <item>企鹅</item>
+        <item>兔子</item>
+        <item>鲨鱼</item>
+        <item>天鹅</item>
+        <item>老虎</item>
+        <item>斑马</item>
+    </string-array>
+
+    <string-array name="patient_info">
+        <item>账号</item>
+        <item>姓名</item>
+        <item>年龄</item>
+        <item>生日</item>
+        <item>性别</item>
+        <item>科室</item>
+        <item>床号</item>
+        <item>医院</item>
+        <item>我的亲人账户</item>
+        <item>我的医生账户</item>
+    </string-array>
+
+    <string name="loading">正在加载...</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

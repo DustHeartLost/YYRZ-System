@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/directional_guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.84" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/directional_guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.00" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/directional_guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <TextView
+        android:id="@+id/directional_textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/directional_label1"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/directional_textView2"
+        app:layout_constraintStart_toStartOf="@+id/directional_guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/directional_guideline3" />
+
+    <TextView
+        android:id="@+id/directional_textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/directional_label2"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/directional_textView3"
+        app:layout_constraintStart_toStartOf="@+id/directional_textView1"
+        app:layout_constraintTop_toBottomOf="@+id/directional_textView1" />
+
+    <TextView
+        android:id="@+id/directional_textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/directional_label3"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/directional_textView4"
+        app:layout_constraintStart_toStartOf="@+id/directional_textView2"
+        app:layout_constraintTop_toBottomOf="@+id/directional_textView2" />
+
+    <TextView
+        android:id="@+id/directional_textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/directional_label4"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/directional_textView5"
+        app:layout_constraintStart_toStartOf="@+id/directional_textView3"
+        app:layout_constraintTop_toBottomOf="@+id/directional_textView3" />
+
+    <TextView
+        android:id="@+id/directional_textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/directional_label5"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/directional_textView6"
+        app:layout_constraintStart_toStartOf="@+id/directional_textView4"
+        app:layout_constraintTop_toBottomOf="@+id/directional_textView4" />
+
+    <TextView
+        android:id="@+id/directional_textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/directional_label6"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/directional_guideline2"
+        app:layout_constraintStart_toStartOf="@+id/directional_textView5"
+        app:layout_constraintTop_toBottomOf="@+id/directional_textView5" />
+
+
+    <RadioGroup
+        android:id="@+id/directional_radioGroup1"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:checkedButton="@id/directional_radioButton1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/directional_textView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/directional_textView1"
+        app:layout_constraintTop_toTopOf="@+id/directional_textView1">
+
+        <RadioButton
+            android:id="@+id/directional_radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_0" />
+
+        <RadioButton
+            android:id="@+id/directional_radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_1" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/directional_radioGroup2"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/directional_radioButton3"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/directional_textView2"
+        app:layout_constraintStart_toStartOf="@+id/directional_radioGroup1"
+        app:layout_constraintTop_toTopOf="@+id/directional_textView2">
+
+        <RadioButton
+            android:id="@+id/directional_radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_0" />
+
+        <RadioButton
+            android:id="@+id/directional_radioButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_1" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/directional_radioGroup3"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/directional_radioButton5"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/directional_textView3"
+        app:layout_constraintStart_toStartOf="@+id/directional_radioGroup2"
+        app:layout_constraintTop_toTopOf="@+id/directional_textView3">
+
+        <RadioButton
+            android:id="@+id/directional_radioButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_0" />
+
+        <RadioButton
+            android:id="@+id/directional_radioButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_1" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/directional_radioGroup4"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/directional_radioButton7"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/directional_textView4"
+        app:layout_constraintStart_toStartOf="@+id/directional_radioGroup3"
+        app:layout_constraintTop_toTopOf="@+id/directional_textView4">
+
+        <RadioButton
+            android:id="@+id/directional_radioButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_0" />
+
+        <RadioButton
+            android:id="@+id/directional_radioButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_1" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/directional_radioGroup5"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/directional_radioButton9"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/directional_textView5"
+        app:layout_constraintStart_toStartOf="@+id/directional_radioGroup4"
+        app:layout_constraintTop_toTopOf="@+id/directional_textView5">
+
+        <RadioButton
+            android:id="@+id/directional_radioButton9"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/grade_0" />
+
+        <RadioButton
+            android:id="@+id/directional_radioButton10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_1" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/directional_radioGroup6"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/directional_radioButton11"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/directional_textView6"
+        app:layout_constraintStart_toStartOf="@+id/directional_radioGroup5"
+        app:layout_constraintTop_toTopOf="@+id/directional_textView6">
+
+        <RadioButton
+            android:id="@+id/directional_radioButton11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_0" />
+
+        <RadioButton
+            android:id="@+id/directional_radioButton12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/grade_1" />
+
+
+    </RadioGroup>
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="@+id/directional_textView4"
+        app:layout_constraintEnd_toStartOf="@+id/directional_guideline4"
+        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/directional_textView2" />
+
+    <ImageView
+        android:id="@+id/directional_imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/directional_textView1"
+        app:layout_constraintStart_toEndOf="@+id/directional_textView1"
+        app:layout_constraintTop_toTopOf="@+id/directional_textView1"
+        app:srcCompat="@drawable/voice" />
+
+    <ImageView
+        android:id="@+id/directional_imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/divider5"
+        app:layout_constraintEnd_toStartOf="@+id/divider5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider5"
+        app:srcCompat="@drawable/voice" />
+
+    <ImageView
+        android:id="@+id/directional_imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/divider3"
+        app:layout_constraintEnd_toStartOf="@+id/divider3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider3"
+        app:srcCompat="@drawable/voice" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="@+id/directional_textView6"
+        app:layout_constraintEnd_toStartOf="@+id/directional_guideline4"
+        app:layout_constraintHorizontal_bias="0.84"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/directional_textView5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

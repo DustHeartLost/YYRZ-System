@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    app_bar和菜单item的颜色-->
+    <color name="colorPrimary">#000000</color>
+<!--    系统工具栏颜色-->
+    <color name="colorPrimaryDark">#FCFDFF</color>
+
+    <color name="colorAccent">#03A9F4</color>
+    <array name="trainingColor">
+        <item>#5693B7</item>
+        <item>#5688B7</item>
+        <item>#567EB7</item>
+        <item>#5676B7</item>
+        <item>#566EB7</item>
+        <item>#5668B7</item>
+        <item>#565BB7</item>
+        <item>#6356B7</item>
+
+        <item>#5693B7</item>
+        <item>#5688B7</item>
+        <item>#567EB7</item>
+        <item>#5676B7</item>
+        <item>#566EB7</item>
+        <item>#5668B7</item>
+        <item>#565BB7</item>
+        <item>#6356B7</item>
+        <item>#5693B7</item>
+        <item>#5688B7</item>
+        <item>#567EB7</item>
+        <item>#5676B7</item>
+        <item>#566EB7</item>
+        <item>#5668B7</item>
+        <item>#565BB7</item>
+        <item>#6356B7</item>
+    </array>
+</resources>
