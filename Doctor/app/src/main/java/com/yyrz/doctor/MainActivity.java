@@ -44,6 +44,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import cn.jpush.android.api.JPushInterface;
+
 public class MainActivity extends AppCompatActivity implements RapidFloatingActionContentLabelList.OnRapidFloatingActionContentLabelListListener{
     private AppBarConfiguration mAppBarConfiguration;
     public static HashMap<String,Integer> record;
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements RapidFloatingActi
         record=new HashMap<>();
         creatInstructionMap();
         CommonViewModel commonViewModel = CommonViewModel.getInstance(this,getApplicationContext());
+        JPushInterface.init(CommonViewModel.getInstance().getContext());
         CommonViewModel.getInstance().setToolbar(toolbar);
         ActionBar actionBar=getSupportActionBar();
         CommonViewModel.getInstance().setActionBar(actionBar);

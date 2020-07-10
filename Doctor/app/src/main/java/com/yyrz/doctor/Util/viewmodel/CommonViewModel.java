@@ -34,6 +34,7 @@ public class CommonViewModel extends ViewModel {
     public static final String TYPE_DESTINATION="destination";
     public static final String REQUESTBIND="requestBind";
     public static final String RESPONDBIND="respondBind";
+    public static final String TYPE_SENSORDATA="sensorData";
     //个人账号
     private String account;
     private String currentPaccount;
@@ -64,6 +65,7 @@ public class CommonViewModel extends ViewModel {
     private MutableLiveData<DoctorInformation> doctorInformation;
     private MutableLiveData<ArrayList<PatientInformation>> patientInformation;
     private MutableLiveData<String>login;
+    private MutableLiveData<String>JPushAlias;
 
     private CommonViewModel(){}
 
@@ -88,6 +90,7 @@ public class CommonViewModel extends ViewModel {
             instance.record=new Record();
             instance.hasRead=new int[9];
             instance.navController= Navigation.findNavController(activity, R.id.nav_host_fragment);
+            instance.JPushAlias=new MutableLiveData<>();
         }
         return instance;
     }
@@ -204,5 +207,8 @@ public class CommonViewModel extends ViewModel {
     }
     public void setFloatBottom(RapidFloatingActionButton floatBottom) {
         this.floatBottom = floatBottom;
+    }
+    public MutableLiveData<String> getJPushAlias() {
+        return JPushAlias;
     }
 }

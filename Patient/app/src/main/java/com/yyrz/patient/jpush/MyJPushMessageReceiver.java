@@ -25,28 +25,45 @@ import cn.jpush.android.service.JPushMessageReceiver;
 public class MyJPushMessageReceiver extends JPushMessageReceiver {
     @Override
     public void onAliasOperatorResult(Context context, JPushMessage jPushMessage) {
-        if(jPushMessage.getErrorCode() == 0){
-            Toast.makeText(context, "register success", Toast.LENGTH_SHORT).show();
-            CommonViewModel.getInstance().getLogin().postValue("201");
-        }else{
-            JPushInterface.setAlias(MainActivity.context,1, CommonViewModel.getInstance().getPaccount());
-            Toast.makeText(context, "register fail"+jPushMessage.getErrorCode(), Toast.LENGTH_SHORT).show();
+        switch (jPushMessage.getSequence()){
+            case 1:
+                if(jPushMessage.getErrorCode() == 0){
+                    Toast.makeText(context, "register success", Toast.LENGTH_SHORT).show();
+                    CommonViewModel.getInstance().getLogin().postValue("201");
+                }else if(jPushMessage.getErrorCode()==6017){
+                    CommonViewModel.getInstance().getLogin().postValue("当前账号已失效，请重新更换账号");
+                }
+                else{
+                    JPushInterface.setAlias(MainActivity.context,1, CommonViewModel.getInstance().getPaccount());
+                    Toast.makeText(context, "register fail"+jPushMessage.getErrorCode(), Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case 2://此处需要写删除别名之后的代码
+                break;
+            case 3:
+                if(jPushMessage.getErrorCode()!=0)
+                    JPushInterface.getAlias(MainActivity.context, 3);
+                else if(jPushMessage.getAlias()!=null&&jPushMessage.getAlias().equals(CommonViewModel.getInstance().getPaccount())){
+                    CommonViewModel.getInstance().getLogin().postValue("201");
+                }
+                else
+                    JPushInterface.setAlias(MainActivity.context, 1, CommonViewModel.getInstance().getPaccount());
+                break;
         }
-        super.onAliasOperatorResult(context, jPushMessage);
     }
 
     @Override
     public void onMessage(Context context, CustomMessage customMessage) {
         //Toast.makeText(context,"收到了自定义消息"+customMessage.message,Toast.LENGTH_SHORT).show();
         Map<String,String> map=new Gson().fromJson(customMessage.extra,Map.class);
-        Date now=new Date(System.currentTimeMillis());
-        SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date timestamp = null;
-        try {
-            timestamp =formatter.parse(map.get("timestamp"));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+//        Date now=new Date(System.currentTimeMillis());
+//        SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        Date timestamp = null;
+//        try {
+//            timestamp =formatter.parse(map.get("timestamp"));
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
 //        if(now.getTime()-timestamp.getTime()>50000){
 //            Log.d("我","丢弃一个数据包");
 //            return;
@@ -70,7 +87,7 @@ public class MyJPushMessageReceiver extends JPushMessageReceiver {
         switch (type){
             case CommonViewModel.TYPE_NAVCONTROLLER:
                     jumpPager1(customMessage.message);
-                    if(commonViewModel.getNavController().getCurrentDestination().getId()==R.id.login)
+                    if(commonViewModel.getNavController().getCurrentDestination().getId()!=R.id.login)
                     RequestRepository.getInstance().confirmCurrentState(map.get("daccount"), Integer.valueOf(customMessage.message),map.get("timestamp"),CommonViewModel.TYPE_CONFIRMCONTROLLER);break;
             case CommonViewModel.TYPE_INSTRUCTIONS:
                     commonViewModel.getAssessmentInstructions().postValue(customMessage.message);break;

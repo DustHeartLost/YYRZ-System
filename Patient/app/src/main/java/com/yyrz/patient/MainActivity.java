@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         SpeechUtility.createUtility(this, SpeechConstant.APPID +"=5ee8302b");
         //推送初始化和各种公用变量的初始化
         CommonViewModel commonViewModel=CommonViewModel.getInstance(this, getApplicationContext());
+        JPushInterface.init(MainActivity.context);
         commonViewModel.getIsNoActionBar().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean aBoolean) {
@@ -46,23 +47,25 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-            NavController navController = CommonViewModel.getInstance(null, null).getNavController();
-            int id = navController.getCurrentDestination().getId();
-            if (id == R.id.mainUI) {
-                if ((System.currentTimeMillis() - time) > 2000) {
-                    Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
-                    time = System.currentTimeMillis();
-                } else {
-                    System.exit(0);
-                    finishActivity(0);
-                }
-                return true;
-            }
-            if(id==R.id.login){
-                CommonViewModel.getInstance().getNavController().navigateUp();
+        NavController navController = CommonViewModel.getInstance(null, null).getNavController();
+        int id = navController.getCurrentDestination().getId();
+        if (id == R.id.mainUI) {
+            if ((System.currentTimeMillis() - time) > 2000) {
+                Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
+                time = System.currentTimeMillis();
+            } else {
+                JPushInterface.deleteAlias(this,2);
                 System.exit(0);
                 finishActivity(0);
             }
-            return false;
+            return true;
+        }
+        if(id==R.id.login){
+            CommonViewModel.getInstance().getNavController().navigateUp();
+            JPushInterface.deleteAlias(this,2);
+            System.exit(0);
+            finishActivity(0);
+        }
+        return false;
     }
 }

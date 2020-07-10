@@ -61,8 +61,7 @@ public class Login extends Fragment {
                 if(s==null)return;
                 if(s.substring(0,3).equals("200")){
                     CommonViewModel.getInstance().setAccount(s.substring(3));
-                    JPushInterface.init(CommonViewModel.getInstance().getContext());
-                    JPushInterface.setAlias(CommonViewModel.getInstance().getContext(),1, CommonViewModel.getInstance().getAccount());
+                    JPushInterface.getAlias(CommonViewModel.getInstance().getContext(),3);
                 }
                 else if(s.substring(0,3).equals("201")){
                     progressBar.setVisibility(View.GONE);
