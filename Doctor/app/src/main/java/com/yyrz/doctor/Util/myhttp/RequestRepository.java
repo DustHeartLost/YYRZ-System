@@ -4,10 +4,12 @@ import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
 import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.yyrz.doctor.Util.DataRestored.Repository;
 import com.yyrz.doctor.Util.exception.ErrorCode;
 import com.yyrz.doctor.Util.model.DoctorInformation;
@@ -288,6 +290,6 @@ public class RequestRepository {
                 return true;
             }
         });
-        new MyHTTP().get("login","daccount="+account+"&password="+password,handler,String.class);
+        new MyHTTP().get("login","daccount="+account+"&password="+password,handler, String.class);
     }
 }

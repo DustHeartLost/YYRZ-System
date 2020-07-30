@@ -102,25 +102,35 @@ public class MyJPushMessageReceiver extends JPushMessageReceiver {
         NavController navController=commonViewModel.getNavController();
         switch (destination){
             case "01":commonViewModel.getIsNoActionBar().postValue(true);
+                if(Integer.parseInt(destination)<1) return;
                 navController.navigate(R.id.action_mainUI_to_alterLineTest);
                 commonViewModel.getAssessmentInstructions().postValue("01_speech_1");break;
             case "02":navController.navigate(R.id.action_alterLineTest_to_visualTest);
+                if(Integer.parseInt(destination)<2) return;
                 commonViewModel.getAssessmentInstructions().postValue("02_speech_1");break;
             case "03":navController.navigate(R.id.action_visualTest_to_named);
+                if(Integer.parseInt(destination)<3) return;
                 commonViewModel.getAssessmentInstructions().postValue("03_speech_1");break;
             case "04":navController.navigate(R.id.action_named_to_memoryAssessment);
+                if(Integer.parseInt(destination)<4) return;
                 commonViewModel.getAssessmentInstructions().postValue("04_speech_1");break;
             case "05":navController.navigate(R.id.action_memoryAssessment_to_attention);
+                if(Integer.parseInt(destination)<5) return;
                 commonViewModel.getAssessmentInstructions().postValue("05_speech_1");break;
             case "06":navController.navigate(R.id.action_attention_to_fluentLanguage);
+                if(Integer.parseInt(destination)<6) return;
                 commonViewModel.getAssessmentInstructions().postValue("06_speech_1");break;
             case "07":navController.navigate(R.id.action_fluentLanguage_to_abstraction);
+                if(Integer.parseInt(destination)<7) return;
                 commonViewModel.getAssessmentInstructions().postValue("07_speech_1");break;
             case "08":navController.navigate(R.id.action_abstraction_to_memoryDelayTest);
+                if(Integer.parseInt(destination)<8) return;
                 commonViewModel.getAssessmentInstructions().postValue("08_speech_1");break;
             case "09":navController.navigate(R.id.action_memoryDelayTest_to_direction);
+                if(Integer.parseInt(destination)<9) return;
                 commonViewModel.getAssessmentInstructions().postValue("09_speech_1");break;
             case "10":commonViewModel.getIsNoActionBar().postValue(false);
+                if(Integer.parseInt(destination)<10) return;
                 CommonViewModel.getInstance(null,null).getMyTextToSpeech().speech("评估结束",null);
                 navController.popBackStack(R.id.mainUI,false);break;
         }

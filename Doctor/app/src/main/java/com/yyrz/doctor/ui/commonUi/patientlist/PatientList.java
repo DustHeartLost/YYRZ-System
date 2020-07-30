@@ -1,10 +1,16 @@
 package com.yyrz.doctor.ui.commonUi.patientlist;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
@@ -21,12 +27,15 @@ import com.yyrz.doctor.Util.viewmodel.CommonViewModel;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class PatientList extends Fragment {
     private ConstraintLayout progressBar;
     private RecyclerView recyclerView;
     private CommonViewModel commonViewModel;
     private char state;
+    private int flag;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,6 +72,7 @@ public class PatientList extends Fragment {
             @Override
             public void onChanged(Integer integer) {
                 if(0<integer&&integer<=10){
+                    flag=1;
                     progressBar.setVisibility(View.GONE);
                     Navigation.findNavController(getActivity(),R.id.nav_host_fragment).navigate(R.id.action_patientList_to_showViewPager);
                 }
@@ -72,6 +82,17 @@ public class PatientList extends Fragment {
                 }
             }
         });
+
+        @SuppressLint("HandlerLeak")
+        final Handler handler=new Handler(){
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                progressBar.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.VISIBLE);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage("请确保患者端登录到主界面").create().show();
+            }
+        };
         commonViewModel.getIsQueryEnd().observe(this,new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
@@ -87,6 +108,16 @@ public class PatientList extends Fragment {
                     commonViewModel.getRecord().setPaccount(commonViewModel.getCurrentPaccount());
                     RequestRepository.getInstance().currentState(commonViewModel.getCurrentPaccount(),"01", CommonViewModel.CON_ASSESSMENT, CommonViewModel.TYPE_NAVCONTROLLER, commonViewModel.getAccount());
                 }
+               flag=0;
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        if(flag!=1){
+                            handler.sendEmptyMessage(0);
+                        }
+                    }
+                },3000);
             }});
     }
 

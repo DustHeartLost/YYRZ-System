@@ -1,13 +1,16 @@
 package com.yyrz.doctor.ui.loginAndEnroll;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.ComponentActivity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -32,6 +35,7 @@ public class Login extends Fragment {
         password=root.findViewById(R.id.editText2);
         Button button = root.findViewById(R.id.button);
         progressBar=root.findViewById(R.id.progressBar);
+        TextView enroll=root.findViewById(R.id.textView);
         exist=root.findViewById(R.id.exist);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,9 +50,18 @@ public class Login extends Fragment {
                 RequestRepository.getInstance().login(account.getText().toString(),password.getText().toString());
             }
         });
+        enroll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(CommonViewModel.getInstance().getContext(),"注册功能禁用",Toast.LENGTH_LONG).show();
+            }
+        });
         progressBar.setVisibility(View.GONE);
         exist.setVisibility(View.VISIBLE);
         CommonViewModel.getInstance().getIsImageBackgroundExist().setValue(1);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage("请将患者端和医护端分别安装在两台设备上").create().show();
         return root;
     }
 

@@ -75,8 +75,6 @@ public class FinishProcess extends Fragment {
                 CommonViewModel.getInstance().clear();
             }
         });
-
-        RequestRepository.getInstance().postMoca();
     }
 
 }

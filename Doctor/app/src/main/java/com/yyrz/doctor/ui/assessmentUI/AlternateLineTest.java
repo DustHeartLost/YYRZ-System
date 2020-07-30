@@ -117,10 +117,12 @@ public class AlternateLineTest extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_TAKE_PHOTO && resultCode == RESULT_OK) {
-            Bitmap bitmap=BitmapFactory.decodeFile(commonViewModel.getContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES)+"/"+commonViewModel.getCurrentPaccount()+".jpg");
+            BitmapFactory.Options options2 = new BitmapFactory.Options();
+            options2.inPreferredConfig = Bitmap.Config.RGB_565;
+            Bitmap bitmap=BitmapFactory.decodeFile(commonViewModel.getContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES)+"/"+commonViewModel.getCurrentPaccount()+".jpg",options2);
             commonViewModel.getBitmap().setValue(ThumbnailUtils.extractThumbnail(bitmap,imageView.getWidth(),imageView.getHeight()));
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos);
             byte[] bytes = baos.toByteArray();
             Base64.Encoder encoder=Base64.getEncoder();
             String xx=encoder.encodeToString(bytes);
