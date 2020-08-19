@@ -207,6 +207,11 @@ public class MainActivity extends AppCompatActivity implements RapidFloatingActi
                 if(CommonViewModel.getInstance().getNavController().getCurrentDestination().getId()==R.id.historyRecordView)return;
                 CommonViewModel.getInstance().getNavController().navigateUp();
                 CommonViewModel.getInstance().getNavController().navigate(R.id.action_nav_patient_to_historyRecordView);break;
+            case 2:
+                if(CommonViewModel.getInstance().getNavController().getCurrentDestination().getId()==R.id.estimate)return;
+                CommonViewModel.getInstance().getNavController().navigateUp();
+                CommonViewModel.getInstance().getNavController().navigate(R.id.action_nav_patient_to_estimate);
+                break;
         }
     }
 
@@ -223,6 +228,11 @@ public class MainActivity extends AppCompatActivity implements RapidFloatingActi
                 if(CommonViewModel.getInstance().getNavController().getCurrentDestination().getId()==R.id.historyRecordView)return;
                 CommonViewModel.getInstance().getNavController().navigateUp();
                 CommonViewModel.getInstance().getNavController().navigate(R.id.action_nav_patient_to_historyRecordView);
+                break;
+            case 2:
+                if(CommonViewModel.getInstance().getNavController().getCurrentDestination().getId()==R.id.estimate)return;
+                CommonViewModel.getInstance().getNavController().navigateUp();
+                CommonViewModel.getInstance().getNavController().navigate(R.id.action_nav_patient_to_estimate);
                 break;
         }
     }
