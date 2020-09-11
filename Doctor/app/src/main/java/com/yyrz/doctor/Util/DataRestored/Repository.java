@@ -109,10 +109,10 @@ public class Repository {
                      } catch (IOException | ClassNotFoundException e) {
                         e.printStackTrace();
                     }
-                    Bitmap bitmap = BitmapFactory.decodeFile(CommonViewModel.getInstance().getContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES) + "/" + temp + ".jpg");
+                   Bitmap bitmap = BitmapFactory.decodeFile(CommonViewModel.getInstance().getContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES) + "/" + temp + ".jpg");
                     if (bitmap != null) {
                         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos);
                         byte[] bytes = baos.toByteArray();
                         Base64.Encoder encoder = Base64.getEncoder();
                         String xx = encoder.encodeToString(bytes);

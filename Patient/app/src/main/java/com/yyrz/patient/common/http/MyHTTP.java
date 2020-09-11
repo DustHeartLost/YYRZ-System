@@ -14,8 +14,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 class MyHTTP {
+    //private final static String host = "http://192.168.2.177:8763/";
     private final static String host = "http://zhangxiye.free.vipnps.vip/patient-api/";
-
     public <T> void get(String url, final String param, final Handler handler, final Class<T> t ) {
         final String getURL = host + url+"?"+param;
         Log.d("我",getURL);

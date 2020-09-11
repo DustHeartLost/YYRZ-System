@@ -44,6 +44,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import cn.jpush.android.api.JPushInterface;
+
 public class MainActivity extends AppCompatActivity implements RapidFloatingActionContentLabelList.OnRapidFloatingActionContentLabelListListener{
     private AppBarConfiguration mAppBarConfiguration;
     public static HashMap<String,Integer> record;
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements RapidFloatingActi
         record=new HashMap<>();
         creatInstructionMap();
         CommonViewModel commonViewModel = CommonViewModel.getInstance(this,getApplicationContext());
+        JPushInterface.init(CommonViewModel.getInstance().getContext());
         CommonViewModel.getInstance().setToolbar(toolbar);
         ActionBar actionBar=getSupportActionBar();
         CommonViewModel.getInstance().setActionBar(actionBar);
@@ -166,6 +169,11 @@ public class MainActivity extends AppCompatActivity implements RapidFloatingActi
 
     public void trainingClick(View view) {
         TextView textView=(TextView)view;
+        //TODO:将来是要删除这部分的
+        if(textView.getText().equals("人物类图片")||textView.getText().equals("亲人图像记忆")||textView.getText().equals("往事回忆")){
+            Toast.makeText(CommonViewModel.getInstance().getContext(),"功能暂未开放，敬请期待",Toast.LENGTH_SHORT).show();
+            return;
+        }
         CommonViewModel commonViewModel=CommonViewModel.getInstance();
         String alias=commonViewModel.getCurrentPaccount();
         RequestRepository.getInstance().currentState(alias,map.get(textView.getText()),CommonViewModel.CON_TRAINING,CommonViewModel.TYPE_INSTRUCTIONS,null);
@@ -199,6 +207,11 @@ public class MainActivity extends AppCompatActivity implements RapidFloatingActi
                 if(CommonViewModel.getInstance().getNavController().getCurrentDestination().getId()==R.id.historyRecordView)return;
                 CommonViewModel.getInstance().getNavController().navigateUp();
                 CommonViewModel.getInstance().getNavController().navigate(R.id.action_nav_patient_to_historyRecordView);break;
+            case 2:
+                if(CommonViewModel.getInstance().getNavController().getCurrentDestination().getId()==R.id.estimate)return;
+                CommonViewModel.getInstance().getNavController().navigateUp();
+                CommonViewModel.getInstance().getNavController().navigate(R.id.action_nav_patient_to_estimate);
+                break;
         }
     }
 
@@ -215,6 +228,11 @@ public class MainActivity extends AppCompatActivity implements RapidFloatingActi
                 if(CommonViewModel.getInstance().getNavController().getCurrentDestination().getId()==R.id.historyRecordView)return;
                 CommonViewModel.getInstance().getNavController().navigateUp();
                 CommonViewModel.getInstance().getNavController().navigate(R.id.action_nav_patient_to_historyRecordView);
+                break;
+            case 2:
+                if(CommonViewModel.getInstance().getNavController().getCurrentDestination().getId()==R.id.estimate)return;
+                CommonViewModel.getInstance().getNavController().navigateUp();
+                CommonViewModel.getInstance().getNavController().navigate(R.id.action_nav_patient_to_estimate);
                 break;
         }
     }

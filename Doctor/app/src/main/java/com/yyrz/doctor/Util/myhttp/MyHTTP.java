@@ -3,12 +3,14 @@ package com.yyrz.doctor.Util.myhttp;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.yyrz.doctor.Util.exception.ErrorCode;
 import com.yyrz.doctor.Util.model.Moca;
 import com.yyrz.doctor.Util.util.GsonAdapter;
+import com.yyrz.doctor.Util.viewmodel.CommonViewModel;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,8 +22,8 @@ import java.nio.charset.StandardCharsets;
 
 public class MyHTTP {
     //此时为局域网IP地址
-    public final static String host = "http://192.168.0.103:8762/";
-//
+    //public final static String host = "http://192.168.0.103:8762/";
+    public final static String host = "http://zhangxiye.free.vipnps.vip/doctor-api/";
     public <T> void get(String url, final String param, final Handler handler,final Class<T> t ) {
         final String getURL = host + url+"?"+param;
         new Thread(new Runnable() {
@@ -104,7 +106,7 @@ public class MyHTTP {
                 try {
                     URL url = new URL(posturl);
                     HttpURLConnection connection=(HttpURLConnection)url.openConnection();
-                    connection.setConnectTimeout(3000);
+                    connection.setConnectTimeout(6000);
                     connection.setRequestMethod("POST");
                     connection.setRequestProperty("Content-Type", "application/json");
                     connection.setDoOutput(true);
@@ -131,6 +133,9 @@ public class MyHTTP {
                             while ((lines = reader.readLine()) != null) {
                                 json.append(lines);
                             }
+
+                            Log.d("MOCA3",json.toString());
+
                             reader.close();
                             connection.disconnect();
                             ErrorCode errorCode = gson.fromJson(json.toString(), ErrorCode.class);

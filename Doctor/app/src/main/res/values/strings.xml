@@ -15,6 +15,7 @@
     <string name="menu_slideshow">我的患者</string>
     <string name="statistics">数据统计</string>
     <string name="recordHistory">评估记录</string>
+    <string name="estimate">评语</string>
     <string name="menu_tools">我的消息</string>
     <string name="menu_share">设置</string>
     <string name="menu_send">退出</string>

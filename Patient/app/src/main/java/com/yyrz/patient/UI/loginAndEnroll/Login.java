@@ -1,11 +1,13 @@
 package com.yyrz.patient.UI.loginAndEnroll;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -34,6 +36,7 @@ public class Login extends Fragment {
         Button button = root.findViewById(R.id.button);
         progressBar=root.findViewById(R.id.progressBar);
         exist=root.findViewById(R.id.exist);
+        TextView enroll=root.findViewById(R.id.textView);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +53,16 @@ public class Login extends Fragment {
         progressBar.setVisibility(View.GONE);
         exist.setVisibility(View.VISIBLE);
         CommonViewModel.getInstance().getIsNoActionBar().setValue(true);
+
+        enroll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.context,"注册功能禁用",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage("请将患者端和医护端分别安装在两台设备上").create().show();
         return root;
     }
 

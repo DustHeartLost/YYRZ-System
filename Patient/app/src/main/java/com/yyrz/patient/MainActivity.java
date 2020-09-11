@@ -1,5 +1,10 @@
 package com.yyrz.patient;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.navigation.NavController;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
@@ -7,14 +12,9 @@ import android.view.KeyEvent;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.navigation.NavController;
-
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
 import com.yyrz.patient.common.viewModel.CommonViewModel;
-
 import cn.jpush.android.api.JPushInterface;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,25 +47,25 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-            NavController navController = CommonViewModel.getInstance(null, null).getNavController();
-            int id = navController.getCurrentDestination().getId();
-            if (id == R.id.mainUI) {
-                if ((System.currentTimeMillis() - time) > 2000) {
-                    Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
-                    time = System.currentTimeMillis();
-                } else {
-                    JPushInterface.deleteAlias(MainActivity.context,3);
-                    System.exit(0);
-                    finishActivity(0);
-                }
-                return true;
-            }
-            if(id==R.id.login){
-                JPushInterface.deleteAlias(MainActivity.context,3);
-                CommonViewModel.getInstance().getNavController().navigateUp();
+        NavController navController = CommonViewModel.getInstance(null, null).getNavController();
+        int id = navController.getCurrentDestination().getId();
+        if (id == R.id.mainUI) {
+            if ((System.currentTimeMillis() - time) > 2000) {
+                Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
+                time = System.currentTimeMillis();
+            } else {
+                JPushInterface.deleteAlias(this,2);
                 System.exit(0);
                 finishActivity(0);
             }
-            return false;
+            return true;
+        }
+        if(id==R.id.login){
+            CommonViewModel.getInstance().getNavController().navigateUp();
+            JPushInterface.deleteAlias(this,2);
+            System.exit(0);
+            finishActivity(0);
+        }
+        return false;
     }
 }
