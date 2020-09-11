@@ -208,17 +208,18 @@ public class DoctorController {
         }
     }
 
-    @PostMapping(value = "data",produces="application/json;charset=UTF-8")
+    @PostMapping(value = "data")
     public String dataFromSensor(@RequestBody JSONObject  dataSensor)throws MyException{
         HashMap<String,String>map=new HashMap<>();
-        map.put("type","dataSensor");
+        map.put("control","sensorData");
+        JSONObject data=dataSensor.getJSONObject("data");
         //TODO:此处需要将数据加入数据库
-        if(doctorPushService.sendMessageByAlias(dataSensor.getString("alias"),dataSensor.getString("data"),map)){
-            return "金雪莹小姐姐，你的数据传输成功了呢!你最美！";
+        System.out.println(dataSensor.toJSONString());
+        if(doctorPushService.sendMessageByAlias(dataSensor.getString("alias"),data.toJSONString(),map)){
+            return "金雪莹小姐姐，送你一朵小花花！数据传输OK";
         }
         else{
-            throw new MyException(3005,"金雪莹小姐姐，你的推送失败了，加油加油奥里给!");
-        }
+           throw new MyException(3005,"金雪莹小姐姐，你的推送失败了，加油加油奥里给!");
+       }
     }
-
 }

@@ -29,6 +29,8 @@ public class PatientFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        CommonViewModel.getInstance().getToolbar().getMenu().findItem(R.id.addPatient).setVisible(true);
+        CommonViewModel.getInstance().getToolbar().getMenu().findItem(R.id.search).setVisible(false);
         CommonViewModel.getInstance().getPatientInformation().setValue(null);
     }
 

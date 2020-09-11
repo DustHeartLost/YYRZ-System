@@ -108,7 +108,7 @@ public class PatientList extends Fragment {
                     commonViewModel.getRecord().setPaccount(commonViewModel.getCurrentPaccount());
                     RequestRepository.getInstance().currentState(commonViewModel.getCurrentPaccount(),"01", CommonViewModel.CON_ASSESSMENT, CommonViewModel.TYPE_NAVCONTROLLER, commonViewModel.getAccount());
                 }
-               flag=0;
+                flag=0;
                 Timer timer = new Timer();
                 timer.schedule(new TimerTask() {
                     @Override
@@ -117,7 +117,7 @@ public class PatientList extends Fragment {
                             handler.sendEmptyMessage(0);
                         }
                     }
-                },3000);
+                },10000);
             }});
     }
 
