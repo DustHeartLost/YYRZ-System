@@ -1,22 +1,21 @@
 package com.yyrz.patient.jpush;
 
 import android.content.Context;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.navigation.NavController;
+
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.yyrz.patient.MainActivity;
 import com.yyrz.patient.R;
 import com.yyrz.patient.common.dialog.BindFragment;
 import com.yyrz.patient.common.http.RequestRepository;
 import com.yyrz.patient.common.viewModel.CommonViewModel;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Map;
+
 import cn.jpush.android.api.CustomMessage;
 import cn.jpush.android.api.JPushInterface;
 import cn.jpush.android.api.JPushMessage;
@@ -38,15 +37,16 @@ public class MyJPushMessageReceiver extends JPushMessageReceiver {
     @Override
     public void onMessage(Context context, CustomMessage customMessage) {
         //Toast.makeText(context,"收到了自定义消息"+customMessage.message,Toast.LENGTH_SHORT).show();
+        CommonViewModel commonViewModel=CommonViewModel.getInstance();
         Map<String,String> map=new Gson().fromJson(customMessage.extra,Map.class);
-        Date now=new Date(System.currentTimeMillis());
-        SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date timestamp = null;
-        try {
-            timestamp =formatter.parse(map.get("timestamp"));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+//        Date now=new Date(System.currentTimeMillis());
+//        SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        Date timestamp = null;
+//        try {
+//            timestamp =formatter.parse(map.get("timestamp"));
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
 //        if(now.getTime()-timestamp.getTime()>50000){
 //            Log.d("我","丢弃一个数据包");
 //            return;
@@ -58,9 +58,14 @@ public class MyJPushMessageReceiver extends JPushMessageReceiver {
             case CommonViewModel.REQUESTBIND:
                 DialogFragment dialogFragment=new BindFragment(customMessage.message,map.get("daccount"),map.get("paccount"));
                 dialogFragment.show(CommonViewModel.getInstance(null,null).getFragmentManager(), "missile");break;
+            case CommonViewModel.TYPE_SENSORDATA:
+                Gson gson = new Gson();
+                JsonObject jsonObject=gson.fromJson(customMessage.message,JsonObject.class);
+                commonViewModel.getSensor().postValue(gson.fromJson(customMessage.message,JsonObject.class));
         }
-        Toast.makeText(context,"收到了自定义消息"+customMessage.message,Toast.LENGTH_SHORT).show();
+
     }
+
 
     private void assessmentControl(CustomMessage customMessage){
         CommonViewModel commonViewModel=CommonViewModel.getInstance(null,null);
@@ -77,7 +82,8 @@ public class MyJPushMessageReceiver extends JPushMessageReceiver {
             case CommonViewModel.TYPE_DESTINATION:
                     jumpPager2(customMessage.message);
                     RequestRepository.getInstance().confirmCurrentState(map.get("daccount"), Integer.valueOf(customMessage.message),map.get("timestamp"),CommonViewModel.TYPE_CONFIRMCONTROLLER);break;
-             }
+
+        }
     }
 
     private void jumpPager1(String destination){

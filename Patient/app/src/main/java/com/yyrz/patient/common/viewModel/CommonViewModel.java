@@ -8,14 +8,13 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+
+import com.google.gson.JsonObject;
 import com.yyrz.patient.R;
 import com.yyrz.patient.common.util.MyTextToSpeech;
 import com.yyrz.patient.common.util.Tts;
 
-import org.json.JSONObject;
-
 import java.util.HashMap;
-import java.util.Map;
 
 public class CommonViewModel extends ViewModel {
     private static  CommonViewModel ourInstance;
@@ -34,6 +33,8 @@ public class CommonViewModel extends ViewModel {
     private MutableLiveData<Integer>isSpeechFinished;    //0不表示任何意义，其他根据各部分而定
     private MutableLiveData<HashMap<String,String>>patientInfo;
     private MutableLiveData<String>login;
+    private MutableLiveData<JsonObject>sensor;
+
 
     //常量区
     public static final String CON_ASSESSMENT="assessment";
@@ -44,6 +45,7 @@ public class CommonViewModel extends ViewModel {
     public static final String TYPE_DESTINATION="destination";
     public static final String REQUESTBIND="requestBind";
     public static final String RESPONDBIND="respondBind";
+    public static final String TYPE_SENSORDATA="sensorData";
 
     public static CommonViewModel getInstance(Activity activity, Context context) {
         if(ourInstance==null){
@@ -59,6 +61,7 @@ public class CommonViewModel extends ViewModel {
             ourInstance.mTts=Tts.getInstance(context);
             ourInstance.isFirstEnter=false;
             ourInstance.login=new MutableLiveData<>();
+            ourInstance.sensor=new MutableLiveData<>();
         }
         return ourInstance;
     }
@@ -109,4 +112,5 @@ public class CommonViewModel extends ViewModel {
     public void setPaccount(String paccount) {
         this.paccount = paccount;
     }
+    public MutableLiveData<JsonObject> getSensor() { return sensor; }
 }

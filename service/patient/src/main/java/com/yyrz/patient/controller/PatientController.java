@@ -1,15 +1,17 @@
 package com.yyrz.patient.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.yyrz.common.myException.MyException;
+import com.yyrz.patient.model.PatientVo;
 import com.yyrz.patient.service.PatientDatabaseService;
 import com.yyrz.patient.service.PatientPushService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -71,5 +73,46 @@ public class PatientController {
         }else{
             throw new MyException(3001,"账号密码输入错误");
         }
+    }
+
+    /**
+     * 根据患者用户名查询患者信息
+     * @param patientVo
+     * @return
+     * @throws MyException
+     */
+    @PostMapping(value = "queryUserByPaccount",produces="application/json;charset=UTF-8")
+    public String queryUserByPaccount(@RequestBody PatientVo patientVo)throws MyException{
+        String sql = "";
+        sql = "select * from patient where paccount='" + patientVo.getPaccount() + "';";
+        List<Map<String,Object>> patientVos = patientDatabaseService.selectByPaccount(sql);
+        if (patientVos != null && patientVos.size() > 0) {
+            return JSON.toJSONString(patientVos.get(0));
+        } else {
+            throw new MyException(500, "不存在该患者信息");
+        }
+    }
+
+    /**
+     * 给指定患者添加信息（那两个信息）
+     * @param patientVo
+     * @return
+     * @throws MyException
+     */
+    @PostMapping(value = "data",produces="application/json;charset=UTF-8")
+    public String dataFromSensor(@RequestBody PatientVo patientVo)throws MyException{
+        //查询是否存在该用户
+        String sql = "";
+        sql = "select * from patient where paccount='" + patientVo.getPaccount() + "';";
+        List<Map<String,Object>> patientVos = patientDatabaseService.selectByPaccount(sql);
+        if (patientVos != null && patientVos.size() > 0) {
+            for (Map<String, Object> patientVo1 : patientVos) {
+                sql = "update patient set pressure='"+patientVo.getPressure()+" ', prelocation='"+patientVo.getPrelocation()+"'  where paccount='" + patientVo.getPaccount() + "';";
+                patientDatabaseService.insertPat(sql);
+            }
+        } else {
+            throw new MyException(500, "不存在该患者信息");
+        }
+        return JSON.toJSONString(patientVos.get(0));
     }
 }

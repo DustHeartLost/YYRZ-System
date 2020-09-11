@@ -62,7 +62,6 @@ public class Login extends Fragment {
                 if(s==null)return;
                 if(s.substring(0,3).equals("200")){
                     CommonViewModel.getInstance().setPaccount(s.substring(3));
-                    JPushInterface.init(MainActivity.context);
                     JPushInterface.setAlias(MainActivity.context,1, CommonViewModel.getInstance().getPaccount());
                 }
                 else if(s.substring(0,3).equals("201")){
@@ -77,6 +76,7 @@ public class Login extends Fragment {
                 }
             }
         });
+
     }
 
     @Override

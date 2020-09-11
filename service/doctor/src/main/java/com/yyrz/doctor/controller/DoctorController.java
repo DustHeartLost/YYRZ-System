@@ -3,6 +3,7 @@ package com.yyrz.doctor.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.yyrz.common.myException.MyException;
+import com.yyrz.database.model.PatientVo;
 import com.yyrz.doctor.service.DoctorDatabaseService;
 import com.yyrz.doctor.service.DoctorPushService;
 import net.coobird.thumbnailator.Thumbnails;
@@ -208,12 +209,13 @@ public class DoctorController {
         }
     }
 
-    @PostMapping(value = "data",produces="application/json;charset=UTF-8")
+    @PostMapping(value = "data")
     public String dataFromSensor(@RequestBody JSONObject  dataSensor)throws MyException{
         HashMap<String,String>map=new HashMap<>();
         map.put("type","dataSensor");
         //TODO:此处需要将数据加入数据库
-        if(doctorPushService.sendMessageByAlias(dataSensor.getString("alias"),dataSensor.getString("data"),map)){
+        doctorDatabaseService.insert(dataSensor);
+        if(doctorPushService.sendMessageByAlias(dataSensor.getString("alias"),dataSensor.toJSONString(),map)){
             return "金雪莹小姐姐，你的数据传输成功了呢!你最美！";
         }
         else{

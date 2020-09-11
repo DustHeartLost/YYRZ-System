@@ -18,7 +18,10 @@ public class LogoutFragment extends Fragment {
 
         return root;
     }
-//    private Viewport initViewPort() {
+
+
+}
+ //   private Viewport initViewPort() {
 //        Viewport viewport = new Viewport();
 //        viewport.top = 100;
 //        viewport.bottom = 0;
@@ -129,4 +132,5 @@ public class LogoutFragment extends Fragment {
 //        //设置点可以被选中
 //        lcv.setValueSelectionEnabled(true);
 //    }
-}
+//}
+

@@ -1,16 +1,21 @@
 package com.yyrz.patient.UI.mainUI;
 
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.yyrz.patient.R;
@@ -93,6 +98,17 @@ public class MainUI extends Fragment {
                     textView.setVisibility(View.GONE);
                     recyclerView.setAdapter(new InfoAdapter(getResources().getStringArray(R.array.patient_info)));
                 }
+            }
+        });
+        Button button;
+        button=getView().findViewById(R.id.button3);
+        button.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v) {
+                NavController controller= Navigation.findNavController(v);
+                controller.navigate(R.id.action_mainUI_to_sensorFragment);
             }
         });
     }

@@ -1,10 +1,5 @@
 package com.yyrz.patient;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.navigation.NavController;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
@@ -12,9 +7,14 @@ import android.view.KeyEvent;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.navigation.NavController;
+
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
 import com.yyrz.patient.common.viewModel.CommonViewModel;
+
 import cn.jpush.android.api.JPushInterface;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         SpeechUtility.createUtility(this, SpeechConstant.APPID +"=5ee8302b");
         //推送初始化和各种公用变量的初始化
         CommonViewModel commonViewModel=CommonViewModel.getInstance(this, getApplicationContext());
+        JPushInterface.init(MainActivity.context);
         commonViewModel.getIsNoActionBar().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean aBoolean) {
@@ -53,12 +54,14 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
                     time = System.currentTimeMillis();
                 } else {
+                    JPushInterface.deleteAlias(MainActivity.context,3);
                     System.exit(0);
                     finishActivity(0);
                 }
                 return true;
             }
             if(id==R.id.login){
+                JPushInterface.deleteAlias(MainActivity.context,3);
                 CommonViewModel.getInstance().getNavController().navigateUp();
                 System.exit(0);
                 finishActivity(0);

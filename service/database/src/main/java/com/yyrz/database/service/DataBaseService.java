@@ -1,6 +1,8 @@
 package com.yyrz.database.service;
 
+import com.yyrz.database.model.PatientVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import java.util.Iterator;
@@ -10,7 +12,7 @@ import java.util.Map;
 @Service
 public class DataBaseService {
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     public List<Map<String, Object>> query(String sql) {
         List<Map<String, Object>> map = jdbcTemplate.queryForList(sql);
@@ -28,11 +30,14 @@ public class DataBaseService {
         String sql;
         if (table.equals("moca")) sql = "insert into " + table + " values(null," + temp + ");";
         else sql = "insert into " + table + " values(" + temp + ");";
-        return jdbcTemplate.update(sql) > 0 ? true : false;
+        return jdbcTemplate.update(sql) > 0;
     }
 
     public boolean update(String sql){
-        jdbcTemplate.update(sql);
-        return true;
+        return jdbcTemplate.update(sql) > 0;
+    }
+
+    public void insert(String sql) {
+         jdbcTemplate.execute(sql);
     }
 }

@@ -30,7 +30,7 @@
     <string name="fluentLanguage_tips4">狗在房间的时候，猫总是躲在沙发下面</string>
     <string name="fluentLanguage_tips5">请您尽量多地说出以 ‘发’ 字开头的词语或俗语，如 ‘发财’ 。时间是1分钟，您说的越多越好，越快越好，尽量不要重复。</string>
     <string name="fluentLanguage_tips6">请重复刚才的话</string>
-    <string name="abstraction_tips1">下面做个小练习，请您说说桔子和香蕉在什么方面相类似？</string>
+    <string name="abstraction_tips1">请您拿起橘子：</string>
     <string name="abstraction_tips2">请再换一种说法，他们在什么方面相类似？</string>
     <string name="abstraction_tips3">您说的没错，也可以说他们都是水果。</string>
     <string name="abstraction_tips4">您再说说火车和自行车在什么方面相类似？</string>
@@ -115,4 +115,7 @@
     <string name="loading">正在加载...</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button">SensorButton</string>
+    <string name="button11">Button</string>
+    <string name="button22">Button</string>
 </resources>

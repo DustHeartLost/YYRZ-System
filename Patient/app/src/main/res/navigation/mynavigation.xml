@@ -29,6 +29,9 @@
             app:destination="@id/login"
             app:enterAnim="@anim/slide_right_in"
             app:exitAnim="@anim/slide_left_out" />
+        <action
+            android:id="@+id/action_mainUI_to_sensorFragment"
+            app:destination="@id/sensorFragment" />
     </fragment>
     <fragment
         android:id="@+id/abstraction"
@@ -142,5 +145,18 @@
         android:id="@+id/login"
         android:name="com.yyrz.patient.UI.loginAndEnroll.Login"
         android:label="login"
-        tools:layout="@layout/login" />
+        tools:layout="@layout/login" >
+        <action
+            android:id="@+id/action_login_to_sensorFragment"
+            app:destination="@id/sensorFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/bindFragment"
+        android:name="com.yyrz.patient.common.dialog.BindFragment"
+        android:label="BindFragment" />
+    <fragment
+        android:id="@+id/sensorFragment"
+        android:name="com.yyrz.patient.UI.sensorDataShow.SensorFragment"
+        android:label="sensor_data"
+        tools:layout="@layout/sensor_data" />
 </navigation>
