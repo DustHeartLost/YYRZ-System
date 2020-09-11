@@ -3,7 +3,6 @@ package com.yyrz.doctor.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.yyrz.common.myException.MyException;
-import com.yyrz.database.model.PatientVo;
 import com.yyrz.doctor.service.DoctorDatabaseService;
 import com.yyrz.doctor.service.DoctorPushService;
 import net.coobird.thumbnailator.Thumbnails;
@@ -18,9 +17,9 @@ import java.util.*;
 @RestController
 public class DoctorController {
     //这个路径是张熙业电脑对用的路径
-    //private String photoPath="Z:\\MySoftware\\MySQL\\yyrzs_photo\\";
+    private String photoPath="Z:\\MySoftware\\MySQL\\yyrzs_photo\\";
     //这个电脑是郭容利电脑对应的路径
-    private String photoPath="C:\\Users\\GRL\\Desktop\\github\\YYRZ-System-master\\res\\photos\\";
+    //private String photoPath="C:\\Users\\GRL\\Desktop\\github\\YYRZ-System-master\\res\\photos\\";
     @Autowired
     DoctorPushService doctorPushService;
     @Autowired
@@ -212,15 +211,15 @@ public class DoctorController {
     @PostMapping(value = "data")
     public String dataFromSensor(@RequestBody JSONObject  dataSensor)throws MyException{
         HashMap<String,String>map=new HashMap<>();
-        map.put("type","dataSensor");
+        map.put("control","sensorData");
+        JSONObject data=dataSensor.getJSONObject("data");
         //TODO:此处需要将数据加入数据库
-        doctorDatabaseService.insert(dataSensor);
-        if(doctorPushService.sendMessageByAlias(dataSensor.getString("alias"),dataSensor.toJSONString(),map)){
-            return "金雪莹小姐姐，你的数据传输成功了呢!你最美！";
+        System.out.println(dataSensor.toJSONString());
+        if(doctorPushService.sendMessageByAlias(dataSensor.getString("alias"),data.toJSONString(),map)){
+            return "金雪莹小姐姐，送你一朵小花花！数据传输OK";
         }
         else{
-            throw new MyException(3005,"金雪莹小姐姐，你的推送失败了，加油加油奥里给!");
-        }
+           throw new MyException(3005,"金雪莹小姐姐，你的推送失败了，加油加油奥里给!");
+       }
     }
-
 }
